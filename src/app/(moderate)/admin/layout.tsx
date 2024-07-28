@@ -1,3 +1,4 @@
+import CategoryForm from '@/components/CategoryForm'
 import React from 'react'
 
 const AdminLayout: React.FC = () => {
@@ -5,7 +6,7 @@ const AdminLayout: React.FC = () => {
     //verification
     // input if auth == false
   return (
-    <div>AdminLayout</div>
+    <div><CategoryForm/></div>
   )
 }
 
