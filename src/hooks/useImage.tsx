@@ -5,7 +5,7 @@ import {
   ref,
   uploadBytes,
 } from "firebase/storage";
-import { storage } from "../assets/firebase";
+import { storage } from "@/assets/firebaseApp";
 
 export default function useImage() {
   const uploadImage = async (file: File) => {
