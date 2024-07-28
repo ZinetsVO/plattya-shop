@@ -1,0 +1,29 @@
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 24px 16px;
+  min-width: 343px;
+  min-height: 388px;
+}
+.titleadnbutton__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.rememberandforgot__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.remember__wrapper{
+    display: flex;
+    gap: 8px;
+}
+.signIn__button{
+  background-color: var(--button-color);
+  border-radius: 12px;
+  color: var(--white-text-color);
+  padding: 9px;
+}

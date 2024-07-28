@@ -1,7 +1,8 @@
 :root {
   --max-width: 1440px;
   --bg-color: #ffffff;
-
+  --button-color:#121212;
+  --white-text-color: #ffffff;
 }
 
 * {
@@ -23,7 +24,8 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #121212;
+font-weight: 600;
   text-decoration: none;
 }
 
@@ -61,4 +63,3 @@ ol {
   margin: 0 auto;
   padding: 0 10px;
 }
-
