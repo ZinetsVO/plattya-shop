@@ -38,7 +38,6 @@ const CategoryForm: React.FC = () => {
 
   const [file, setFile] = useState<File | null>(null);
   const [url, setUrl] = useState<string>("");
-  const [categories, setCategories] = useState<Array<any>>([]);
 
   const { uploadImage, deleteImage } = useImage();
 
