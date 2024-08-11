@@ -1,27 +1,34 @@
-
 .login__form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 25px;
   padding: 24px 16px;
   min-width: 343px;
   min-height: 388px;
+  max-width: 500px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(+50%, -50%);
 }
 .titleadnbutton__wrapper {
   display: flex;
   justify-content: space-between;
 }
 
+.name__input,
+.password__input{
+  border-bottom: 1px solid var(--border-color);
 
-.rememberandforgot__wrapper{
-    display: flex;
-    justify-content: space-between;
+
 }
-.remember__wrapper{
-    display: flex;
-    gap: 8px;
+.name__input::content,
+.password__input::content{
+background-color: transparent;
+
+
 }
-.signIn__button{
+.signIn__button {
   background-color: var(--button-color);
   border-radius: 12px;
   color: var(--white-text-color);

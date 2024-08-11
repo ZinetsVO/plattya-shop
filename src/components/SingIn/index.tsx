@@ -2,20 +2,17 @@
 import React, { useState } from "react";
 import css from "./style.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
-
-
-
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
-
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 interface LoginFormInput {
   email: string;
   password: string;
 }
 
 const Login = () => {
-  
   const auth = getAuth();
-  const { register, handleSubmit } = useForm<LoginFormInput>();
+  const { register, handleSubmit, reset } = useForm<LoginFormInput>();
 
   const onSubmit: SubmitHandler<LoginFormInput> = async (data) => {
     try {
@@ -28,37 +25,33 @@ const Login = () => {
 
       const user = userCredential.user;
     } catch (error) {
-      console.error("Login failed:", error);
+      toast.error("Неправильний пароль або email.");
+      reset(); 
     }
+    
   };
 
   return (
-    <form className={css.login__form} onSubmit={handleSubmit(onSubmit)}>
+    <>
+       <Toaster position="top-center" reverseOrder={true} />
+      <form className={css.login__form} onSubmit={handleSubmit(onSubmit)}>
      
         <h2>Sign in</h2>
- 
-      <p>
-        Don't have an account yet?<a href="#!">Sing up</a>
-      </p>
+        <input
+          className={css.name__input}
+          placeholder="Your username or email"
+          {...register("email", { required: true })}
+        />
+        <input
+          className={css.password__input}
+          placeholder="Password"
+          type="password"
+          {...register("password", { required: true })}
 
-      <input
-        placeholder="Your username or email"
-        {...register("email", { required: true })}
-      />
-      <input
-        placeholder="Password"
-        type="password"
-        {...register("password", { required: true })}
-      />
-      <div className={css.rememberandforgot__wrapper}>
-        <div className={css.remember__wrapper}>
-          <input type="checkbox" />
-          <label>Remember me</label>
-        </div>
-        <a href="#!">Forgot password?</a>
-      </div>
-      <button className={css.signIn__button}>Sign in</button>
-    </form>
+        />
+        <button className={css.signIn__button}>Sign in</button>
+      </form>
+    </>
   );
 };
 

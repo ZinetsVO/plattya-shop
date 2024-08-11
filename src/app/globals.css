@@ -3,6 +3,7 @@
   --bg-color: #ffffff;
   --button-color:#121212;
   --white-text-color: #ffffff;
+  --border-color: #CBCBCB;
 }
 
 * {
@@ -33,6 +34,7 @@ input,
 button,
 select,
 textarea {
+  background-color: transparent;
   border: none;
   font: inherit;
   cursor: pointer;

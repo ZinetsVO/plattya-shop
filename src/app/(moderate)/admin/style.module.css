@@ -1,0 +1,16 @@
+.logOut__wrapper{
+display: flex;
+justify-content: end;
+align-items: center;
+gap: 20px;
+padding-top: 20px;
+}
+.logOut__button{
+    display: flex;
+
+    align-items: center;
+    background-color: var(--button-color);
+    border-radius: 12px;
+    color: var(--white-text-color);
+    padding: 6px 20px;
+}
